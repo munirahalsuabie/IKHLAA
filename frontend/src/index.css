@@ -16,7 +16,7 @@
 
 
 /* =========================================================
-   GLOBAL PAGE BEHAVIOR (OPTIONAL BUT RECOMMENDED)
+   GLOBAL PAGE BEHAVIOR 
 ========================================================= */
 html,
 body,
@@ -45,7 +45,7 @@ body {
    LEAFLET DARK GLASS POPUPS (Dashboard)
 ========================================================= */
 .leaflet-popup-content-wrapper {
-  background: rgba(30, 41, 59, 0.95); /* Dark slate glass */
+  background: rgba(30, 41, 59, 0.95); 
   backdrop-filter: blur(8px);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -59,7 +59,7 @@ body {
 }
 
 .leaflet-popup-close-button {
-  color: #94a3b8 !important; /* Soft gray close button */
+  color: #94a3b8 !important; 
 }
 
 
