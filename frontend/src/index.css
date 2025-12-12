@@ -1,0 +1,183 @@
+/* =========================================================
+   TAILWIND BASE
+========================================================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================================================
+   GLOBAL SYSTEM FONTS (iOS Style)
+========================================================= */
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+/* =========================================================
+   GLOBAL PAGE BEHAVIOR (OPTIONAL BUT RECOMMENDED)
+========================================================= */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+
+/* =========================================================
+   LEAFLET MAP GLOBAL FIXES
+========================================================= */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: #0f172a; /* Dark slate background */
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   LEAFLET DARK GLASS POPUPS (Dashboard)
+========================================================= */
+.leaflet-popup-content-wrapper {
+  background: rgba(30, 41, 59, 0.95); /* Dark slate glass */
+  backdrop-filter: blur(8px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.leaflet-popup-tip {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.leaflet-popup-close-button {
+  color: #94a3b8 !important; /* Soft gray close button */
+}
+
+
+/* =========================================================
+   CUSTOM SCROLLBARS (Dashboard)
+========================================================= */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; 
+}
+
+
+/* =========================================================
+   iOS BLUE DOT MARKER (Mobile App)
+========================================================= */
+.ios-marker {
+  background-color: #007AFF;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.ios-marker-ring {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 122, 255, 0.4);
+  border-radius: 50%;
+  animation: pulse-blue 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-blue {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+/* =========================================================
+   GLOBAL ANIMATIONS
+========================================================= */
+
+/* Slide Up Animation */
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s 
+             cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Fade In Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+
+/* =========================================================
+   GLOWING HEATMAP MARKERS
+========================================================= */
+.glow-point {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: breathe 3s infinite ease-in-out;
+}
+
+.glow-core {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+@keyframes breathe {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  50%  { transform: scale(1.2); opacity: 1;   }
+  100% { transform: scale(1);   opacity: 0.8; }
+}
+
+
+/* =========================================================
+   LEAFLET TOOLTIP FIX
+========================================================= */
+.leaflet-tooltip {
+  pointer-events: none !important;
+}

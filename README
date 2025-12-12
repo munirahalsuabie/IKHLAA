@@ -1,0 +1,66 @@
+## 🛠️ Prerequisites
+*   **Python** (3.8 or higher)
+*   **Node.js** (v16 or higher)
+*   A **Groq API Key** (Get one at [console.groq.com](https://console.groq.com))
+
+---
+
+## Part 1: Backend Setup
+
+### 1. Install Dependencies
+Navigate to your backend directory and install the required Python packages:
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Configure Groq API
+Open `main.py` and paste your key directly:
+```python
+# In main.py
+client = Groq(api_key="your_actual_api_key_here")
+```
+
+### 3. Run the Server
+Start the FastAPI server:
+```bash
+uvicorn main:app --reload
+```
+
+✅ **Verify it works:**
+Open your browser to [http://localhost:8000/map-data](http://localhost:8000/map-data).
+You should see a JSON response representing the map zones.
+
+---
+
+## Part 2: Frontend Setup
+
+### 1. Install Dependencies
+Open a new terminal and navigate to the frontend directory.
+
+First, install the base project dependencies:
+```bash
+npm install
+```
+
+Next, install the required Map, UI, and Animation libraries:
+```bash
+npm install react-router-dom react-leaflet leaflet lucide-react framer-motion clsx tailwind-merge
+```
+
+### 2. Run the Application
+Start the development server:
+```bash
+npm run dev
+```
+
+✅ **Launch the App:**
+Click the link shown in your terminal (usually `http://localhost:5173`).
+To view the Dashboard interface, navigate to the dashboard route:
+**`http://localhost:5173/dashboard`**
+
+---
+
+##  Troubleshooting
+*   **Backend Connection:** Ensure the backend is running on port `8000`. If the frontend cannot fetch data, check CORS settings in `main.py`.
+*   **Map Not Loading:** Ensure you have an active internet connection to load the Leaflet map tiles.
+*   **Missing Styles:** If the map looks broken, ensure `import 'leaflet/dist/leaflet.css';` is included at the top of your Dashboard and MapScreen file.
