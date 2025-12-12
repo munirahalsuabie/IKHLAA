@@ -68,20 +68,20 @@ def get_flood_radius() -> float:
     global fire_start_time
 
     if fire_start_time is None:
-        return 0.15  # Initial small radius (150 meters)
+        return 0.15  
 
     elapsed = (datetime.now() - fire_start_time).total_seconds()
 
     if elapsed < 30:
-        return 0.15   # 0 - 30 seconds
+        return 0.15   
     elif elapsed < 60:
-        return 0.25   # 30 - 60 seconds
+        return 0.25  
     elif elapsed < 120:
-        return 0.4    # 1 - 2 minutes
+        return 0.4    
     elif elapsed < 180:
-        return 0.6    # 2 - 3 minutes
+        return 0.6    
     else:
-        return 0.8    # Max cap radius (800 meters)
+        return 0.8  
 
 
 # Endpoints
@@ -238,7 +238,7 @@ async def navigate(user: UserLocation) -> Dict[str, Any]:
         print("LLM Judge evaluation saved. Overall score:", judge_result.get("overall_score"))
 
     except Exception as e:
-        print("⚠️ LLM Judge evaluation failed (Non-blocking error):", e)
+        print(" LLM Judge evaluation failed (Non-blocking error):", e)
 
     return response
 
