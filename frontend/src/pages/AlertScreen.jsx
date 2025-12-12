@@ -59,7 +59,7 @@ const AlertScreen = () => {
           مركز الإشعارات
         </h2>
 
-        {/* Close icon (visual only – no logic attached yet) */}
+        {/* Close icon */}
         <button className="p-1 rounded-full bg-white/20 backdrop-blur-sm">
           <span className="sr-only">إغلاق</span>
           <svg
@@ -137,10 +137,10 @@ const AlertScreen = () => {
         </div>
       </div>
 
-      {/* --- Bottom lock-screen controls (mock icons) --- */}
+      {/* --- Bottom lock-screen controls --- */}
       <div className="absolute bottom-10 left-0 right-0 px-10 flex justify-between pointer-events-none">
         <div className="w-12 h-12 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center">
-          {/* Flashlight icon (dummy) */}
+          {/* Flashlight icon  */}
           <svg
             width="24"
             height="24"
@@ -168,7 +168,7 @@ const AlertScreen = () => {
         </div>
       </div>
 
-      {/* --- Local animation styles (fade-in-up) --- */}
+      {/* --- Local animation styles  --- */}
       <style jsx>{`
         @keyframes fade-in-up {
           from {
