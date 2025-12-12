@@ -158,9 +158,9 @@ const MapScreen = () => {
         const audioSrc = `data:audio/mpeg;base64,${data.audio_base64}`;
         audioRef.current = new Audio(audioSrc);
         audioRef.current.onended = () => setIsPlaying(false);
-        console.log('✅ Audio ready');
+        console.log(' Audio ready');
       } else {
-        console.warn('⚠️ No audio_base64 from backend');
+        console.warn(' No audio_base64 from backend');
       }
     } catch (error) {
       console.error(error);
@@ -172,7 +172,7 @@ const MapScreen = () => {
   const toggleAudio = (e) => {
     e.stopPropagation();
     if (!audioRef.current) {
-      console.warn('⚠️ Audio not ready yet');
+      console.warn(' Audio not ready yet');
       return;
     }
 
@@ -206,7 +206,7 @@ const MapScreen = () => {
         .then(() => setIsPlaying(true))
         .catch((err) => console.error('Audio play error:', err));
     } else {
-      console.warn('⚠️ Audio not ready when pressing start');
+      console.warn(' Audio not ready when pressing start');
     }
   };
 
